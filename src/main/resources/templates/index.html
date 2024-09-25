@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">Lista de carros </h1>
+
+    <section class="grid is-col-min-10">
+
+        <div class=" has-background-grey-dark " th:each="carro: ${carros}">
+
+            <header class=" has-background-primary">
+                <p class="" th:text="${carro.model}"></p>
+                    <span class="tag is-warning" th:text="${carro.maker}"></span>
+            </header>
+
+            <div class="has-background-primary">
+                <div class="is-warning" th:text="${carro.year}"></div>
+                <div class="content" th:text="${carro.price}"></div>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+</body>
+</html>
